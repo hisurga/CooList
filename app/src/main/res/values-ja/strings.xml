@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">CooList</string>
+    <string name="action_settings">設定</string>
+    <string name="todo">ToDo</string>
+    <string name="addlist">Add</string>
+    <string name="err_add">入力してください</string>
+    <string name="undo">取り消し</string>
+    <string name="remove">アイテムを削除しました</string>
+    <string name="desc1">ドラッグ &amp; ドロップでアイテムの並び替え(長押し)</string>
+    <string name="desc2">スワイプで削除</string>
+    <string name="action_about">About</string>
+    <string name="title_activity_settings">設定</string>
+
+    <string name="pref_item">アイテム</string>
+    <string name="pref_fab">フロートアクションボタン</string>
+
+    <string name="pref_text_size">文字サイズ</string>
+    <string name="pref_text_color">文字カラー</string>
+    <string name="pref_background_color">背景カラー</string>
+    <string name="pref_button_color">ボタンカラー</string>
+    <string name="about_title">このアプリについて</string>
+    <string name="about_content">
+        このアプリはオープンソースソフトウェアを使用して構築されています。\n\n
+        com.google.code.gson:gson:2.7\n
+        http://www.apache.org/licenses/LICENSE-2.0\n
+    </string>
+
+    <string-array name="pref_text_size_titles">
+        <item>10sp</item>
+        <item>12sp</item>
+        <item>15sp</item>
+        <item>17sp</item>
+        <item>20sp</item>
+        <item>22sp</item>
+        <item>25sp</item>
+        <item>27sp</item>
+        <item>30sp</item>
+        <item>35sp</item>
+        <item>40sp</item>
+    </string-array>
+
+    <string-array name="pref_text_size_values">
+        <item>10</item>
+        <item>12</item>
+        <item>15</item>
+        <item>17</item>
+        <item>20</item>
+        <item>22</item>
+        <item>25</item>
+        <item>27</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+    </string-array>
+
+    <string-array name="pref_color_titles">
+        <item>ブラック</item>
+        <item>グレー</item>
+        <item>ライトグレー</item>
+        <item>ホワイト</item>
+        <item>ピンク</item>
+        <item>ブルー</item>
+        <item>ライトブルー</item>
+        <item>インディゴ</item>
+        <item>ライトインディゴ</item>
+        <item>グリーン</item>
+        <item>ライトグリーン</item>
+        <item>イエロー</item>
+        <item>ライトイエロー</item>
+        <item>オレンジ</item>
+        <item>ライトオレンジ</item>
+        <item>レッド</item>
+        <item>ライトレッド</item>
+    </string-array>
+
+    <string-array name="pref_color_values">
+        <item>#212121</item>
+        <item>#757575</item>
+        <item>#9E9E9E</item>
+        <item>#FFFFFF</item>
+        <item>#FF4081</item>
+        <item>#0288D1</item>
+        <item>#03A9F4</item>
+        <item>#3F51B5</item>
+        <item>#303F9F</item>
+        <item>#689F38</item>
+        <item>#8BC34A</item>
+        <item>#FBC02D</item>
+        <item>#FFEB3B</item>
+        <item>#F57C00</item>
+        <item>#FF9800</item>
+        <item>#D32F2F</item>
+        <item>#F44336</item>
+    </string-array>
+
+</resources>
