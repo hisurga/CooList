@@ -94,7 +94,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 
             bindPreferenceSummaryToValue(findPreference("item_text_size_list"));
             bindPreferenceSummaryToValue(findPreference("item_text_color_list"));
-            bindPreferenceSummaryToValue(findPreference("item_background_color_list"));
             bindPreferenceSummaryToValue(findPreference("fab_color_list"));
         }
 
