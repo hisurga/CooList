@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CooList</string>
+    <string name="app_name">List</string>
     <string name="action_settings">設定</string>
     <string name="todo">ToDo</string>
     <string name="addlist">Add</string>
