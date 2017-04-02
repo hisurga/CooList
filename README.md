@@ -1,4 +1,4 @@
-# CooList - Android App
+# List - Android App
 
 ## This is to-do list app.
 
