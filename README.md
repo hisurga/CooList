@@ -7,8 +7,6 @@ And it used GSON to save data.
 
 <a href='https://play.google.com/store/apps/details?id=com.hisurga.simplelist&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="300"/></a>
 
-<image src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hisurga/20161001/20161001032319.png?1475260167" width="200"> <image src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hisurga/20161001/20161001032323.png" width="200"> <image src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hisurga/20161001/20161001032328.png" width="200">
-
 ### ATTRIBUTIONS
 
 #### google-gson
