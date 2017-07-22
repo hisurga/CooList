@@ -73,9 +73,7 @@ public class MainActivity extends AppCompatActivity
                         final int fromPosition = viewHolder.getAdapterPosition();
                         final int toPosition = target.getAdapterPosition();
                         recyclerAdapter.notifyItemMoved(fromPosition, toPosition);
-                        String temp = arrayList.get(fromPosition);
-                        arrayList.remove(fromPosition);
-                        arrayList.add(toPosition, temp);
+                        arrayList.add(toPosition, arrayList.remove(fromPosition));
                         return true;
                     }
                     @Override
