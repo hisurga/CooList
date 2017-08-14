@@ -8,29 +8,24 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 
-public class InputActivity extends AppCompatActivity
-{
+public class InputActivity extends AppCompatActivity {
     TextInputLayout inputLayout;
     EditText inputItem;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_input);
         inputLayout = (TextInputLayout) (findViewById(R.id.input_layout));
-        inputItem = (EditText)(findViewById(R.id.input_item));
+        inputItem = (EditText) (findViewById(R.id.input_item));
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
 
-    public void onClickAdd(View v)
-    {
-        if (inputItem.getText().toString().trim().isEmpty())
-        {
+    public void onClickAdd(View v) {
+        if (inputItem.getText().toString().trim().isEmpty()) {
             inputLayout.setError(getString(R.string.err_add));
-        }
-        else
-        {
+        } else {
             inputLayout.setError(null);
             Intent intent = new Intent();
             intent.putExtra("RESULT", inputItem.getText().toString());

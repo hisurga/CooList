@@ -8,8 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-public class ListItemDecoration extends RecyclerView.ItemDecoration
-{
+public class ListItemDecoration extends RecyclerView.ItemDecoration {
     private static final int[] ATTRS = new int[]
             {
                     android.R.attr.listDivider
@@ -17,27 +16,23 @@ public class ListItemDecoration extends RecyclerView.ItemDecoration
 
     private Drawable listDivider;
 
-    public ListItemDecoration(Context context)
-    {
+    public ListItemDecoration(Context context) {
         final TypedArray typedArray = context.obtainStyledAttributes(ATTRS);
         listDivider = typedArray.getDrawable(0);
         typedArray.recycle();
     }
 
     @Override
-    public void onDraw(Canvas canvas, RecyclerView parent, RecyclerView.State state)
-    {
+    public void onDraw(Canvas canvas, RecyclerView parent, RecyclerView.State state) {
         drawVertical(canvas, parent);
     }
 
-    public void drawVertical(Canvas canvas, RecyclerView parent)
-    {
+    public void drawVertical(Canvas canvas, RecyclerView parent) {
         final int left = parent.getPaddingLeft();
         final int right = parent.getWidth() - parent.getPaddingRight();
 
         final int childCount = parent.getChildCount();
-        for (int i = 0; i < childCount; i++)
-        {
+        for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
             final int top = child.getBottom() + params.bottomMargin;
@@ -48,8 +43,7 @@ public class ListItemDecoration extends RecyclerView.ItemDecoration
     }
 
     @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state)
-    {
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         outRect.set(0, 0, 0, listDivider.getIntrinsicHeight());
     }
 }

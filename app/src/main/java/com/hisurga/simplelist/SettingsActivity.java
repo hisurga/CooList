@@ -15,59 +15,48 @@ import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 
-public class SettingsActivity extends AppCompatPreferenceActivity
-{
+public class SettingsActivity extends AppCompatPreferenceActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupActionBar();
         getFragmentManager().beginTransaction().replace(android.R.id.content, new ThemePreferenceFragment()).commit();
     }
 
-    private void setupActionBar()
-    {
+    private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null)
-        {
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
+
     @Override
-    public boolean onIsMultiPane()
-    {
+    public boolean onIsMultiPane() {
         return isXLargeTablet(this);
     }
 
-    private static boolean isXLargeTablet(Context context)
-    {
+    private static boolean isXLargeTablet(Context context) {
         return (context.getResources().getConfiguration().screenLayout
                 & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_XLARGE;
     }
 
-    private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener()
-    {
+    private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
-        public boolean onPreferenceChange(Preference preference, Object value)
-        {
+        public boolean onPreferenceChange(Preference preference, Object value) {
             String stringValue = value.toString();
 
-            if (preference instanceof ListPreference)
-            {
+            if (preference instanceof ListPreference) {
                 ListPreference listPreference = (ListPreference) preference;
                 int index = listPreference.findIndexOfValue(stringValue);
                 preference.setSummary(index >= 0 ? listPreference.getEntries()[index] : null);
-            }
-            else
-            {
+            } else {
                 preference.setSummary(stringValue);
             }
             return true;
         }
     };
 
-    private static void bindPreferenceSummaryToValue(Preference preference)
-    {
+    private static void bindPreferenceSummaryToValue(Preference preference) {
         preference.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
 
         sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
@@ -76,18 +65,15 @@ public class SettingsActivity extends AppCompatPreferenceActivity
                         .getString(preference.getKey(), ""));
     }
 
-    protected boolean isValidFragment(String fragmentName)
-    {
+    protected boolean isValidFragment(String fragmentName) {
         return PreferenceFragment.class.getName().equals(fragmentName)
                 || ThemePreferenceFragment.class.getName().equals(fragmentName);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public static class ThemePreferenceFragment extends PreferenceFragment
-    {
+    public static class ThemePreferenceFragment extends PreferenceFragment {
         @Override
-        public void onCreate(Bundle savedInstanceState)
-        {
+        public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_contents);
             setHasOptionsMenu(true);
@@ -98,11 +84,9 @@ public class SettingsActivity extends AppCompatPreferenceActivity
         }
 
         @Override
-        public boolean onOptionsItemSelected(MenuItem item)
-        {
+        public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
-            if (id == android.R.id.home)
-            {
+            if (id == android.R.id.home) {
                 startActivity(new Intent(getActivity(), MainActivity.class));
                 getActivity().finish();
                 return true;
@@ -111,16 +95,12 @@ public class SettingsActivity extends AppCompatPreferenceActivity
         }
     }
 
-    public boolean onKeyDown(int keyCode, KeyEvent event)
-    {
-        if (keyCode == KeyEvent.KEYCODE_BACK)
-        {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
             return true;
-        }
-        else
-        {
+        } else {
             return super.onKeyDown(keyCode, event);
         }
     }
