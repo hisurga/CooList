@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void saveGson() {
+    public void saveToGson() {
         SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
         Gson gson = new Gson();
         pref.edit().putString(SAVE_KEY, gson.toJson(arrayList)).apply();
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            saveGson();
+            saveToGson();
             startActivity(new Intent(this, SettingsActivity.class));
             finish();
             return true;
@@ -150,6 +150,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        saveGson();
+        saveToGson();
     }
 }
